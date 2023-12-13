@@ -3,34 +3,41 @@ import { MdModeEdit } from "react-icons/md";
 import { TbHttpDelete } from "react-icons/tb";
 import { Data } from "../../constants";
 
-const Books = ({imageUrl,title,author,id}) => {
-  const [books,setBooks] = useState(Data)
-  const [isediting,setIsEditing] = useState(false)
+const Books = ({ imageUrl, title, author, id,books,setBooks}) => {
 
-const editHandler = ()=>{
-  
-}
+  const [isEditing, setIsEditing] = useState(false);
+  const [isTaskOpen, setIsTaskOpen] = useState(false)
 
-const deleteHandler = (id)=>{
-const remainBook = books.filter((book)=> book.id !== id)
-setBooks(remainBook)
-}
+  const editHandler = () => {
+  };
+
+  const deleteHandler = (id) => {
+    const remainBook = books.filter((book) => book.id !== id);
+    setBooks(remainBook);
+    // console.log(remainBook);
+  };
 
   return (
-    <main key={id}>
-      <div>
-        <div>
+    <main className="flex justify-start items-center my-[2rem] px-[1rem]" key={id}>
+      <div className="flex items-center gap-2 pb-[2rem] w-[60%]">
+        <div className="w-[20%] pl-[5rem]">
           <img src={imageUrl} alt={title} />
         </div>
-        <div>
-          <span>{title}</span>
-          <span>{author}</span>
+        <div className="flex w-[20%] pl-[11rem] gap-32 items-center">
+          <span className=" text-[20px] font-[700]">{title}</span>
+          <span className="text-[20px] font-[700] pl-[2rem]">{author}</span>
         </div>
       </div>
-      <div>
-        <MdModeEdit onClick={editHandler} />
-        <TbHttpDelete onClick={deleteHandler} />
-      </div>
+        <div className="flex justify-evenly w-[30%] mx-auto cursor-pointer gap-40">
+          <MdModeEdit
+            className="text-[35px] text-green-500"
+            onClick={editHandler}
+          />
+          <TbHttpDelete
+            className="text-[35px] text-red-600"
+            onClick={() => deleteHandler(id)}
+          />
+        </div>
     </main>
   );
 };

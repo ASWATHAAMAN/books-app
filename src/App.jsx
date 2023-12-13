@@ -1,7 +1,7 @@
-import { Books } from "./components/Book";
+import { BookList } from "./components/Book";
 
 const App = () => {
-  return ( <Books/>);
+  return ( <BookList/>);
 }
  
 export default App;

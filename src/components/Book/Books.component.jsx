@@ -3,19 +3,7 @@ import { MdModeEdit } from "react-icons/md";
 import { TbHttpDelete } from "react-icons/tb";
 import { Data } from "../../constants";
 
-const Books = ({ imageUrl, title, author, id,books,setBooks}) => {
-
-  const [isEditing, setIsEditing] = useState(false);
-  const [isTaskOpen, setIsTaskOpen] = useState(false)
-
-  const editHandler = () => {
-  };
-
-  const deleteHandler = (id) => {
-    const remainBook = books.filter((book) => book.id !== id);
-    setBooks(remainBook);
-    // console.log(remainBook);
-  };
+const Books = ({ imageUrl, title, author, id,books,setBooks,editHandler,deleteHandler}) => {
 
   return (
     <main className="flex justify-start items-center my-[2rem] px-[1rem]" key={id}>
@@ -31,7 +19,7 @@ const Books = ({ imageUrl, title, author, id,books,setBooks}) => {
         <div className="flex justify-evenly w-[30%] mx-auto cursor-pointer gap-40">
           <MdModeEdit
             className="text-[35px] text-green-500"
-            onClick={editHandler}
+            onClick={()=>editHandler(id)}
           />
           <TbHttpDelete
             className="text-[35px] text-red-600"

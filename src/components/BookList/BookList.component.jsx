@@ -11,6 +11,8 @@ const BookList = () => {
 
    const editHandler = (id) => {
      setIsTaskOpen(true);
+     Data.find((item)=>item.id === id)
+     
    };
 
   const deleteHandler = (id) => {
@@ -38,7 +40,8 @@ const BookList = () => {
           />
         );
       })}
-      <Task isTaskOpen={isTaskOpen}/>
+      <Task isTaskOpen={isTaskOpen}
+      setIsTaskOpen={setIsTaskOpen}/>
     </>
   );
 };

@@ -6,14 +6,19 @@ import Task from "../Task/Task.component";
 
 const BookList = () => {
   const [books, setBooks] = useState(Data);
-  const [isEditing, setIsEditing] = useState(false);
   const [isTaskOpen, setIsTaskOpen] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
 
-   const editHandler = (id) => {
-     setIsTaskOpen(true);
-     Data.find((item)=>item.id === id)
-     
-   };
+  const editHandler = (id, updatedTitle, updatedAuthor) => {
+    setIsTaskOpen(true);
+    const updatedBook = books.map((book) => {
+      if (book.id === id) {
+        return { ...book, title: updatedTitle, author: updatedAuthor };
+      }
+      return book;
+    });
+    setBooks(updatedBook);
+  };
 
   const deleteHandler = (id) => {
     const remainBook = books.filter((book) => book.id !== id);
@@ -30,7 +35,7 @@ const BookList = () => {
           <Books
             key={book.id}
             id={book.id}
-            books = {books}
+            books={books}
             setBooks={setBooks}
             imageUrl={book.imageUrl}
             title={book.title}
@@ -40,8 +45,13 @@ const BookList = () => {
           />
         );
       })}
-      <Task isTaskOpen={isTaskOpen}
-      setIsTaskOpen={setIsTaskOpen}/>
+      <Task
+        isTaskOpen={isTaskOpen}
+        setIsTaskOpen={setIsTaskOpen}
+        isEditing={isEditing}
+        editHandler={editHandler}
+        deleteHandler={deleteHandler}
+      />
     </>
   );
 };

@@ -8,13 +8,18 @@ const BookList = () => {
   const [books, setBooks] = useState(Data);
   const [isTaskOpen, setIsTaskOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
+  const [bookEdit, setIsBookEdit] = useState("");
+
+  const editOptionHandler = (id) => {
+    setIsTaskOpen(true);
+    books.map((book) => {
+      if (book.id === id) {
+        setIsBookEdit(book);
+      }
+    });
+  };
 
   const editHandler = (id, updatedTitle, updatedAuthor) => {
-    console.log(`hit`);
-    console.log(id);
-    console.log(updatedTitle);
-    console.log(updatedAuthor);
-    setIsTaskOpen(true);
     const updatedBook = books.map((book) => {
       if (book.id === id) {
         return { ...book, title: updatedTitle, author: updatedAuthor };

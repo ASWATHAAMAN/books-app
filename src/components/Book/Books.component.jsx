@@ -13,11 +13,13 @@ const Books = ({
   editHandler,
   deleteHandler,
   updatedTitle,
-  updatedAuthor
+  updatedAuthor,
+  setIsTaskOpen
 }) => {
 
 const updateHandler = ()=>{
   editHandler(id,updatedTitle,updatedAuthor)
+
 }
 const handleDelete = ()=>{
   deleteHandler(id)

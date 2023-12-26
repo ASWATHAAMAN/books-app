@@ -11,14 +11,14 @@ const Task = ({
   updatedTitle,
   updatedAuthor,
 }) => {
-  const closeHandler = () => {
+  let closeHandler = () => {
     setIsTaskOpen(false);
   };
-  const [titleUpdate, setTitleUpdate] = useState(title);
-  const [authorUpdate, setAuthorUpdate] = useState(author);
-
-  const editOption = () => {
-    editHandler(id, updatedTitle, updatedAuthor);
+  let [titleUpdate, setTitleUpdate] = useState(title);
+  let [authorUpdate, setAuthorUpdate] = useState(author);
+  
+  let editOption = () => {
+   return editHandler(id, titleUpdate,authorUpdate);
   };
 
   return (
@@ -39,8 +39,8 @@ const Task = ({
             type="text"
             id="title"
             className="p-[0.25rem] outline-0"
-            value={titleUpdate}
             onChange={(e) => setTitleUpdate(e.target.value)}
+            value={titleUpdate|| ``}
           />
         </div>
         <div className="mt-[-4rem]">
@@ -54,8 +54,8 @@ const Task = ({
             type="text"
             id="author"
             className="p-[0.25rem] outline-0"
-            value={authorUpdate}
             onChange={(e) => setAuthorUpdate(e.target.value)}
+            value={authorUpdate|| ``}
           />
         </div>
         <div className="mt-[-13rem] flex gap-[1rem] text-[18px] font-[600] justify-center items-center ">
@@ -80,3 +80,4 @@ const Task = ({
 };
 
 export default Task;
+ 

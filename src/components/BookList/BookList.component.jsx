@@ -10,6 +10,10 @@ const BookList = () => {
   const [isEditing, setIsEditing] = useState(false);
 
   const editHandler = (id, updatedTitle, updatedAuthor) => {
+    console.log(`hit`);
+    console.log(id);
+    console.log(updatedTitle);
+    console.log(updatedAuthor);
     setIsTaskOpen(true);
     const updatedBook = books.map((book) => {
       if (book.id === id) {
@@ -30,7 +34,7 @@ const BookList = () => {
     <>
       <Heading />
       {books.map((book) => {
-        console.log(book);
+        // console.log(book);
         return (
           <Books
             key={book.id}

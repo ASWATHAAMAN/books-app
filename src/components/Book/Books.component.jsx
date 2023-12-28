@@ -14,11 +14,13 @@ const Books = ({
   deleteHandler,
   updatedTitle,
   updatedAuthor,
-  setIsTaskOpen
+  setIsTaskOpen,
+  editOptionHandler
 }) => {
 
-const updateHandler = ()=>{
+const updateHandler = (id)=>{
   editHandler(id,updatedTitle,updatedAuthor)
+  editOptionHandler(id)
 
 }
 const handleDelete = ()=>{
@@ -41,7 +43,7 @@ const handleDelete = ()=>{
       <div className="flex justify-evenly w-[30%] mx-auto cursor-pointer gap-40">
         <MdModeEdit
           className="text-[35px] text-green-500"
-          onClick={ updateHandler}
+          onClick={()=> updateHandler(id)}
         />
         <TbHttpDelete
           className="text-[35px] text-red-600"

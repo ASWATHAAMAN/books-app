@@ -1,26 +1,26 @@
 import { useState } from "react";
 import { FaRegWindowClose } from "react-icons/fa";
+import { Data } from "../../constants";
 
 const Task = ({
   isTaskOpen,
   setIsTaskOpen,
-  title,
-  author,
   editHandler,
-  id,
-  updatedTitle,
-  updatedAuthor,
-  bookToEdit,
+  bookEdit,
 }) => {
+  let [titleUpdate, setTitleUpdate] = useState(bookEdit.title);
+  let [authorUpdate, setAuthorUpdate] = useState(bookEdit.author);
   let closeHandler = () => {
     setIsTaskOpen(false);
+    setTitleUpdate(null);
+    setAuthorUpdate(null);
   };
-  let [titleUpdate, setTitleUpdate] = useState(title);
-  let [authorUpdate, setAuthorUpdate] = useState(author);
 
   let editOption = () => {
-     editHandler(bookToEdit.id, titleUpdate, authorUpdate);
-    setIsTaskOpen(false)
+    editHandler(bookEdit.id, titleUpdate, authorUpdate);
+    closeHandler()
+    setTitleUpdate(null)
+    setAuthorUpdate(null)
   };
 
   return (

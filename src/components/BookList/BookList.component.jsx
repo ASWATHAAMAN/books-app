@@ -51,6 +51,7 @@ const BookList = () => {
             author={book.author}
             editHandler={editHandler}
             deleteHandler={deleteHandler}
+            editOptionHandler={editOptionHandler}
           />
         );
       })}
@@ -60,6 +61,7 @@ const BookList = () => {
         isEditing={isEditing}
         editHandler={editHandler}
         deleteHandler={deleteHandler}
+        bookEdit={bookEdit}
       />
     </>
   );

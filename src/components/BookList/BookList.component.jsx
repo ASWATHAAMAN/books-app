@@ -3,8 +3,10 @@ import { Data } from "../../constants";
 import Books from "../Book/Books.component";
 import Heading from "../Heading/Heading.component";
 import Task from "../Task/Task.component";
+import { Outlet } from "react-router-dom";
 
 const BookList = () => {
+  <Outlet/>
   const [books, setBooks] = useState(Data);
   const [isTaskOpen, setIsTaskOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);

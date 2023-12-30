@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaRegWindowClose } from "react-icons/fa";
-import { Data } from "../../constants";
+
 
 const Task = ({
   isTaskOpen,

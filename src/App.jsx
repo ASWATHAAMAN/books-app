@@ -1,19 +1,16 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import {WelcomePage} from "./components/Book";
+import {History, WelcomePage} from "./components/Book";
 
-import { BookList } from "./components/Book";
 
 const router = createBrowserRouter([
   {
     path: "",
     element: <WelcomePage />,
-    children: [
-      {
-        path: "/",
-        element: <BookList />,
-      },
-    ],
   },
+  {
+    path: "/history",
+    element:<History/>
+  }
 ]);
 
 const App = () => {

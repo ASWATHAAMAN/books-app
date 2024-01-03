@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import {Novels, WelcomePage, Mystery, Horror, Fantasy} from "./components/Book";
+import {Novels, WelcomePage, Mystery, Horror, Fantasy, Search} from "./components/Book";
 import ErrorPage from "./Route/error.route";
 
 
@@ -29,6 +29,11 @@ const router = createBrowserRouter([
     element: <Horror />,
     errorElement: <ErrorPage />,
   },
+  // {
+  //   path: "/search",
+  //   element: <Search />,
+  //   errorElement: <ErrorPage />,
+  // },
 ]);
 
 const App = () => {

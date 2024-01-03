@@ -43,15 +43,18 @@ const Novels = () => {
         // console.log(book);
         if (book.class === "NOVELS") {
           return (
-            <main className="" key={book.id}>
-              <div className="flex flex-wrap">
-                <div className="w-[20%]">
+            <main
+              className="bg-gradient-to-r from-red-400 to-blue-500 hover:from-teal-500 w-[30%] mb-[1rem] cursor-pointer"
+              key={book.id}
+            >
+              <div className="flex">
+                <div className="w-[70%] mx-auto py-[1rem] flex ">
                   <img src={book.imageUrl} alt={book.title} />
                   {/* </div> */}
                   {/* <div className=""> */}
                   <span className=" text-[20px] font-[700] flex justify-center">
                     {book.title}
-                  </span>{" "}
+                  </span>
                   <br />
                   <span className="text-[20px] font-[700] flex justify-center">
                     <span className="text-[18px] font-[400] pr-[10px]">
@@ -60,7 +63,7 @@ const Novels = () => {
                     {book.author}
                   </span>
                   {/* </div> */}
-                  <div className=" cursor-pointer flex justify-center gap-8 mb-[1rem]">
+                  <div className=" cursor-pointer flex justify-center gap-8">
                     <MdModeEdit
                       className="text-[35px] text-green-500"
                       onClick={() => editOptionHandler(book.id)}

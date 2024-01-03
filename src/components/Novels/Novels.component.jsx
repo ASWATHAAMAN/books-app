@@ -48,7 +48,7 @@ const Novels = () => {
               key={book.id}
             >
               <div className="flex">
-                <div className="w-[70%] mx-auto py-[1rem] flex ">
+                <div className="w-[70%] mx-auto py-[1rem] ">
                   <img src={book.imageUrl} alt={book.title} />
                   {/* </div> */}
                   {/* <div className=""> */}

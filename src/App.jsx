@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import {History, Science, WelcomePage} from "./components/Book";
+import {Novels, Literature, WelcomePage, Mystery, Horror} from "./components/Book";
 import ErrorPage from "./Route/error.route";
 
 
@@ -10,13 +10,23 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/history",
-    element: <History />,
+    path: "/novels",
+    element: <Novels />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/science",
-    element: <Science />,
+    path: "/literature",
+    element: <Literature />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/mystery",
+    element: <Mystery />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/horror",
+    element: <Horror />,
     errorElement: <ErrorPage />,
   },
 ]);

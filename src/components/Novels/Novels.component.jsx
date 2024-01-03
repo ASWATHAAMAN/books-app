@@ -5,7 +5,7 @@ import Task from "../Task/Task.component";
 import { MdModeEdit } from "react-icons/md";
 import { TbHttpDelete } from "react-icons/tb";
 
-const Science = () => {
+const Novels = () => {
   const [books, setBooks] = useState(Data);
   const [isTaskOpen, setIsTaskOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -41,32 +41,36 @@ const Science = () => {
       <Heading />
       {books.map((book) => {
         // console.log(book);
-        if (book.class === "SCIENCE") {
+        if (book.class === "NOVELS") {
           return (
-            <main
-              className="flex justify-start items-center my-[2rem] px-[1rem]"
-              key={book.id}
-            >
-              <div className="flex items-center gap-2 pb-[2rem] w-[60%]">
-                <div className="w-[20%] pl-[5rem]">
+            <main className="" key={book.id}>
+              <div className="flex flex-wrap">
+                <div className="w-[20%]">
                   <img src={book.imageUrl} alt={book.title} />
-                </div>
-                <div className="flex w-[20%] pl-[11rem] gap-32 items-center">
-                  <span className=" text-[20px] font-[700]">{book.title}</span>
-                  <span className="text-[20px] font-[700] pl-[2rem]">
+                  {/* </div> */}
+                  {/* <div className=""> */}
+                  <span className=" text-[20px] font-[700] flex justify-center">
+                    {book.title}
+                  </span>{" "}
+                  <br />
+                  <span className="text-[20px] font-[700] flex justify-center">
+                    <span className="text-[18px] font-[400] pr-[10px]">
+                      Author:
+                    </span>
                     {book.author}
                   </span>
+                  {/* </div> */}
+                  <div className=" cursor-pointer flex justify-center gap-8 mb-[1rem]">
+                    <MdModeEdit
+                      className="text-[35px] text-green-500"
+                      onClick={() => editOptionHandler(book.id)}
+                    />
+                    <TbHttpDelete
+                      className="text-[35px] text-red-600"
+                      onClick={() => deleteHandler(book.id)}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="flex justify-evenly w-[30%] mx-auto cursor-pointer gap-40">
-                <MdModeEdit
-                  className="text-[35px] text-green-500"
-                  onClick={() => editOptionHandler(book.id)}
-                />
-                <TbHttpDelete
-                  className="text-[35px] text-red-600"
-                  onClick={() => deleteHandler(book.id)}
-                />
               </div>
             </main>
           );
@@ -84,4 +88,4 @@ const Science = () => {
   );
 };
 
-export default Science;
+export default Novels;

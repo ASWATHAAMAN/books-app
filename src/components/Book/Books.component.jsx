@@ -28,19 +28,19 @@ const handleDelete = ()=>{
 }
   return (
     <main
-      className="flex justify-start items-center my-[2rem] px-[1rem]"
+      className=""
       key={id}
     >
-      <div className="flex items-center gap-2 pb-[2rem] w-[60%]">
-        <div className="w-[20%] pl-[5rem]">
+      <div className="">
+        <div className="">
           <img src={imageUrl} alt={title} />
         </div>
-        <div className="flex w-[20%] pl-[11rem] gap-32 items-center">
+        <div className="">
           <span className=" text-[20px] font-[700]">{title}</span>
-          <span className="text-[20px] font-[700] pl-[2rem]">{author}</span>
+          <span className="text-[20px] font-[700]">{author}</span>
         </div>
       </div>
-      <div className="flex justify-evenly w-[30%] mx-auto cursor-pointer gap-40">
+      <div className="">
         <MdModeEdit
           className="text-[35px] text-green-500"
           onClick={()=> updateHandler(id)}

@@ -38,6 +38,8 @@ const Novels = () => {
 
   return (
     <>
+    <div className="flex flex-wrap justify-center my-[1rem] gap-8">
+
       {/* <Heading /> */}
       {books.map((book) => {
         // console.log(book);
@@ -49,7 +51,7 @@ const Novels = () => {
             >
               <div className="">
                 <div className="w-[70%] mx-auto py-[1rem] ">
-                  <img src={book.imageUrl} alt={book.title} />
+                  <img src={book.imageUrl} alt={book.title} className="box-border h-50 w-50 object-cover h-[20rem] w-[20rem] mx-auto" />
                   {/* </div> */}
                   {/* <div className=""> */}
                   <span className=" text-[20px] font-[700] flex justify-center">
@@ -87,6 +89,7 @@ const Novels = () => {
         deleteHandler={deleteHandler}
         bookEdit={bookEdit}
       />
+    </div>
     </>
   );
 };

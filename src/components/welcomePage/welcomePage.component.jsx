@@ -24,10 +24,10 @@ const WelcomePage = () => {
             NOVELS
           </NavLink>
           <NavLink
-            to={`/literature`}
+            to={`/fantasy`}
             className="text-[18px] font-[600] border-2 px-[1rem] border-blue-400 bg-blue-400 text-white hover:bg-blue-600 hover:border-blue-600 cursor-pointer font-serif"
           >
-            LITERATURE
+            FANTASY
           </NavLink>
           <NavLink
             to={`/mystery`}

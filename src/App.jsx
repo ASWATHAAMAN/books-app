@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import {Novels, Literature, WelcomePage, Mystery, Horror} from "./components/Book";
+import {Novels, WelcomePage, Mystery, Horror, Fantasy} from "./components/Book";
 import ErrorPage from "./Route/error.route";
 
 
@@ -15,8 +15,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/literature",
-    element: <Literature />,
+    path: "/fantasy",
+    element: <Fantasy />,
     errorElement: <ErrorPage />,
   },
   {

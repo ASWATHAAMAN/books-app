@@ -5,7 +5,7 @@ import Task from "../Task/Task.component";
 import { MdModeEdit } from "react-icons/md";
 import { TbHttpDelete } from "react-icons/tb";
 
-const Horror = () => {
+const Fantasy = () => {
   const [books, setBooks] = useState(Data);
   const [isTaskOpen, setIsTaskOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -42,7 +42,7 @@ const Horror = () => {
         {/* <Heading /> */}
         {books.map((book) => {
           // console.log(book);
-          if (book.class === "HORROR") {
+          if (book.class === "FANTASY") {
             return (
               <main
                 className="bg-gradient-to-r from-red-400 to-blue-500 hover:from-teal-500 w-[30%] mb-[1rem] cursor-pointer mt-[1rem] "
@@ -97,4 +97,4 @@ const Horror = () => {
   );
 };
 
-export default Horror;
+export default Fantasy;

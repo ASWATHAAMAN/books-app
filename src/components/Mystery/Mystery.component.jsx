@@ -38,48 +38,61 @@ const Mystery = () => {
 
   return (
     <>
-      <Heading />
-      {books.map((book) => {
-        // console.log(book);
-        if (book.class === "SCIENCE") {
-          return (
-            <main
-              className="flex justify-start items-center my-[2rem] px-[1rem]"
-              key={book.id}
-            >
-              <div className="flex items-center gap-2 pb-[2rem] w-[60%]">
-                <div className="w-[20%] pl-[5rem]">
-                  <img src={book.imageUrl} alt={book.title} />
+      <div className="flex flex-wrap justify-center my-[1rem] gap-8">
+        {/* <Heading /> */}
+        {books.map((book) => {
+          // console.log(book);
+          if (book.class === "MYSTERY") {
+            return (
+              <main
+                className="bg-gradient-to-r from-red-400 to-blue-500 hover:from-teal-500 w-[30%] mb-[1rem] cursor-pointer mt-[1rem] "
+                key={book.id}
+              >
+                <div className="">
+                  <div className="w-[70%] mx-auto py-[1rem] ">
+                    <img
+                      src={book.imageUrl}
+                      alt={book.title}
+                      className="box-border h-50 w-50 object-cover h-[20rem] w-[20rem] mx-auto"
+                    />
+                    {/* </div> */}
+                    {/* <div className=""> */}
+                    <span className=" text-[20px] font-[700] flex justify-center">
+                      {book.title}
+                    </span>
+                    <br />
+                    <span className="text-[20px] font-[700] flex justify-center">
+                      <span className="text-[18px] font-[400] pr-[10px]">
+                        Author:
+                      </span>
+                      {book.author}
+                    </span>
+                    {/* </div> */}
+                    <div className=" cursor-pointer flex justify-center gap-8">
+                      <MdModeEdit
+                        className="text-[35px] text-green-500"
+                        onClick={() => editOptionHandler(book.id)}
+                      />
+                      <TbHttpDelete
+                        className="text-[35px] text-red-600"
+                        onClick={() => deleteHandler(book.id)}
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div className="flex w-[20%] pl-[11rem] gap-32 items-center">
-                  <span className=" text-[20px] font-[700]">{book.title}</span>
-                  <span className="text-[20px] font-[700] pl-[2rem]">
-                    {book.author}
-                  </span>
-                </div>
-              </div>
-              <div className="flex justify-evenly w-[30%] mx-auto cursor-pointer gap-40">
-                <MdModeEdit
-                  className="text-[35px] text-green-500"
-                  onClick={() => editOptionHandler(book.id)}
-                />
-                <TbHttpDelete
-                  className="text-[35px] text-red-600"
-                  onClick={() => deleteHandler(book.id)}
-                />
-              </div>
-            </main>
-          );
-        }
-      })}
-      <Task
-        isTaskOpen={isTaskOpen}
-        setIsTaskOpen={setIsTaskOpen}
-        isEditing={isEditing}
-        editHandler={editHandler}
-        deleteHandler={deleteHandler}
-        bookEdit={bookEdit}
-      />
+              </main>
+            );
+          }
+        })}
+        <Task
+          isTaskOpen={isTaskOpen}
+          setIsTaskOpen={setIsTaskOpen}
+          isEditing={isEditing}
+          editHandler={editHandler}
+          deleteHandler={deleteHandler}
+          bookEdit={bookEdit}
+        />
+      </div>
     </>
   );
 };

@@ -41,7 +41,7 @@ const Literature = () => {
       <Heading />
       {books.map((book) => {
         // console.log(book);
-        if (book.class === "SCIENCE") {
+        if (book.class === "LITERATURE") {
           return (
             <main
               className="flex justify-start items-center my-[2rem] px-[1rem]"

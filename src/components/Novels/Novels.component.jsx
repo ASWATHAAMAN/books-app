@@ -38,16 +38,16 @@ const Novels = () => {
 
   return (
     <>
-      <Heading />
+      {/* <Heading /> */}
       {books.map((book) => {
         // console.log(book);
         if (book.class === "NOVELS") {
           return (
             <main
-              className="bg-gradient-to-r from-red-400 to-blue-500 hover:from-teal-500 w-[30%] mb-[1rem] cursor-pointer"
+              className="bg-gradient-to-r from-red-400 to-blue-500 hover:from-teal-500 w-[30%] mb-[1rem] cursor-pointer mt-[1rem] "
               key={book.id}
             >
-              <div className="flex">
+              <div className="">
                 <div className="w-[70%] mx-auto py-[1rem] ">
                   <img src={book.imageUrl} alt={book.title} />
                   {/* </div> */}

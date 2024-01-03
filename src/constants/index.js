@@ -34,6 +34,41 @@ const Data = [
     author: `HELENE WECKER`,
     class: `NOVELS`,
   },
+  {
+    id: 1,
+    imageUrl: `https://images.pexels.com/photos/3747163/pexels-photo-3747163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`,
+    title: `ONE SIMPLE THING`,
+    author: `EDDIE STERN`,
+    class: `LITERATURE`,
+  },
+  {
+    id: 2,
+    imageUrl: `https://images.unsplash.com/photo-1592903189708-add4d2987b1d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fG5vdmVsc3xlbnwwfHwwfHx8MA%3D%3D`,
+    title: `THE GOLEM AND THE JINNI`,
+    author: `HELENE WECKER`,
+    class: `LITERATURE`,
+  },
+  {
+    id: 3,
+    imageUrl: `https://images.unsplash.com/photo-1592903189708-add4d2987b1d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fG5vdmVsc3xlbnwwfHwwfHx8MA%3D%3D`,
+    title: `THE GOLEM AND THE JINNI`,
+    author: `HELENE WECKER`,
+    class: `LITERATURE`,
+  },
+  {
+    id: 4,
+    imageUrl: `https://images.unsplash.com/photo-1592903189708-add4d2987b1d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fG5vdmVsc3xlbnwwfHwwfHx8MA%3D%3D`,
+    title: `THE GOLEM AND THE JINNI`,
+    author: `HELENE WECKER`,
+    class: `LITERATURE`,
+  },
+  {
+    id: 5,
+    imageUrl: `https://images.unsplash.com/photo-1592903189708-add4d2987b1d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fG5vdmVsc3xlbnwwfHwwfHx8MA%3D%3D`,
+    title: `THE GOLEM AND THE JINNI`,
+    author: `HELENE WECKER`,
+    class: `LITERATURE`,
+  },
 ];
 
 export { Data };

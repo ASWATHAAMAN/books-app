@@ -19,7 +19,7 @@ const WelcomePage = () => {
         <div className="flex gap-8 items-center justify-center">
           <NavLink
             to={`/novels`}
-            className="text-[18px] font-[600] border-2 px-[1rem] border-green-400 bg-green-400 text-white hover:bg-green-600 hover:border-green-600 cursor-pointer font-serif"
+            className="text-[18px] font-[600] border-2 px-[1rem] border-blue-400 bg-blue-400 text-white hover:bg-blue-600 hover:border-blue-600 cursor-pointer font-serif"
           >
             NOVELS
           </NavLink>

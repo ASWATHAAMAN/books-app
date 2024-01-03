@@ -1,16 +1,24 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import {History, WelcomePage} from "./components/Book";
+import {History, Science, WelcomePage} from "./components/Book";
+import ErrorPage from "./Route/error.route";
 
 
 const router = createBrowserRouter([
   {
     path: "",
     element: <WelcomePage />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/history",
-    element:<History/>
-  }
+    element: <History />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/science",
+    element: <Science />,
+    errorElement: <ErrorPage />,
+  },
 ]);
 
 const App = () => {

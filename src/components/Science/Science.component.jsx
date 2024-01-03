@@ -5,7 +5,7 @@ import Task from "../Task/Task.component";
 import { MdModeEdit } from "react-icons/md";
 import { TbHttpDelete } from "react-icons/tb";
 
-const History = () => {
+const Science = () => {
   const [books, setBooks] = useState(Data);
   const [isTaskOpen, setIsTaskOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -41,7 +41,7 @@ const History = () => {
       <Heading />
       {books.map((book) => {
         // console.log(book);
-        if (book.class === "HISTORY") {
+        if (book.class === "SCIENCE") {
           return (
             <main
               className="flex justify-start items-center my-[2rem] px-[1rem]"
@@ -84,4 +84,4 @@ const History = () => {
   );
 };
 
-export default History;
+export default Science;

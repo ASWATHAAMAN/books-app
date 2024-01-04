@@ -11,10 +11,6 @@ const Search = () => {
   const [bookEdit, setIsBookEdit] = useState("");
   const [isEditing, setIsEditing] = useState(false);
 
-  const location = useLocation();
-  const state = location.state;
-  const searchedBooks = [];
-
   const editOptionHandler = (id) => {
     setIsTaskOpen(true);
     books.map((book) => {
@@ -39,6 +35,10 @@ const Search = () => {
     setBooks(remainBook);
     // console.log(remainBook);
   };
+
+  const location = useLocation();
+  const state = location.state;
+  const searchedBooks = [];
 
   books.map((book) => {
     if (
@@ -108,8 +108,12 @@ const Search = () => {
         </div>
       </>
     );
-  }else{
-    <h2>No results found</h2>
+  } else {
+    return (
+      <h2 className="flex justify-center items-center h-screen text-[22px] font-[700]">
+        No results found
+      </h2>
+    );
   }
 };
 

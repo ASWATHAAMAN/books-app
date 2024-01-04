@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Data } from "../../constants";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { MdModeEdit } from "react-icons/md";
 import { TbHttpDelete } from "react-icons/tb";
 import Task from "../Task/Task.component";
@@ -10,7 +10,7 @@ const Search = () => {
   const [isTaskOpen, setIsTaskOpen] = useState(false);
   const [bookEdit, setIsBookEdit] = useState("");
   const [isEditing, setIsEditing] = useState(false);
-
+  
   const editOptionHandler = (id) => {
     setIsTaskOpen(true);
     books.map((book) => {
@@ -35,7 +35,8 @@ const Search = () => {
     setBooks(remainBook);
     // console.log(remainBook);
   };
-
+  
+  const nav = useNavigate();
   const location = useLocation();
   const state = location.state;
   const searchedBooks = [];
@@ -44,13 +45,22 @@ const Search = () => {
     if (
       book.class.includes(state.toUpperCase()) ||
       book.title.includes(state.toUpperCase())
-    ) {
-      return searchedBooks.push(book);
-    }
+      ) {
+        return searchedBooks.push(book);
+      }
   });
   if (searchedBooks.length > 0) {
     return (
       <>
+        <div>
+          <button className="float-right mr-[2rem]" onClick={() => nav(-1)}>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_9og_G7Pstpvg_5t8zVfxuP_CQodGiBU-Yg&usqp=CAU"
+              alt="home"
+              className="box-border h-10 w-10 object-cover mx-auto"
+            />
+          </button>
+        </div>
         <div className="flex flex-wrap justify-center my-[1rem] gap-8">
           {/* <Heading /> */}
           {searchedBooks.map((book) => {
@@ -110,9 +120,19 @@ const Search = () => {
     );
   } else {
     return (
-      <h2 className="flex justify-center items-center h-screen text-[22px] font-[700]">
-        No results found
-      </h2>
+      <>
+        <div>
+          <button className="float-right mr-[2rem]" onClick={() => nav(-1)}>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_9og_G7Pstpvg_5t8zVfxuP_CQodGiBU-Yg&usqp=CAU" alt="home"
+              className="box-border h-10 w-10 object-cover mx-auto"
+            />
+          </button>
+        </div>
+        <h2 className="flex justify-center items-center h-screen text-[22px] font-[700]">
+          No results found
+        </h2>
+      </>
     );
   }
 };

@@ -4,13 +4,14 @@ import Heading from "../Heading/Heading.component";
 import Task from "../Task/Task.component";
 import { MdModeEdit } from "react-icons/md";
 import { TbHttpDelete } from "react-icons/tb";
+import { useNavigate } from "react-router-dom";
 
 const Fantasy = () => {
   const [books, setBooks] = useState(Data);
   const [isTaskOpen, setIsTaskOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [bookEdit, setIsBookEdit] = useState("");
-
+  const nav = useNavigate();
   const editOptionHandler = (id) => {
     setIsTaskOpen(true);
     books.map((book) => {
@@ -38,6 +39,15 @@ const Fantasy = () => {
 
   return (
     <>
+      <div>
+        <button className="float-right mr-[2rem]" onClick={() => nav(-1)}>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_9og_G7Pstpvg_5t8zVfxuP_CQodGiBU-Yg&usqp=CAU"
+            alt="home"
+            className="box-border h-10 w-10 object-cover mx-auto"
+          />
+        </button>
+      </div>
       <div className="flex flex-wrap justify-center my-[1rem] gap-8">
         {/* <Heading /> */}
         {books.map((book) => {

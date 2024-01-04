@@ -1,13 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import { Search } from "../Book";
 import { Data } from "../../constants";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const WelcomePage = () => {
+  const navigate = useNavigate()
   const [item,setItem] = useState("")
   const [product,setProduct] =  useState(Data)
   const searchBtnHandler = ()=>{
+navigate(`/search`)
     const searchBooks = product.map((pro)=>{
       if(pro.class === item){
         return {...pro}
@@ -16,6 +19,8 @@ const WelcomePage = () => {
     })
     setProduct(searchBooks)
   }
+
+
   return (
     <>
       <main className="flex flex-col justify-center items-center h-screen bg-[url(https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ym9va3NoZWxmfGVufDB8fDB8fHww)]">
@@ -23,16 +28,19 @@ const WelcomePage = () => {
           <h1 className="text-[7rem] font-[700] text-center text-red-600 border-black border-2 bg-black px-[2.5rem] py-[0.5rem] font-serif cursor-context-menu">
             The Bookshelf
           </h1>
-          <NavLink to={`/search`} className="flex justify-center items-center">
+          <div className="flex justify-center items-center">
             <input
               type="text"
               className="py-[0.5rem] pr-[10rem] pl-[1rem] text-[20px]"
               placeholder="Search..."
               value={item}
-              onChange={(e)=> setItem(e.target.value)}
+              onChange={(e) => setItem(e.target.value)}
             />
-            <BsSearch className="text-[2.9rem] text-blue-500 bg-black p-[0.80rem] cursor-pointer" onClick={searchBtnHandler}/>
-          </NavLink>
+            <BsSearch
+              className="text-[2.9rem] text-blue-500 bg-black p-[0.80rem] cursor-pointer"
+              onClick={searchBtnHandler}
+            />
+          </div>
           <div className="flex gap-8 items-center justify-center">
             <NavLink
               to={`/novels`}
@@ -61,7 +69,6 @@ const WelcomePage = () => {
           </div>
         </div>
       </main>
-     
     </>
   );
 };

@@ -8,6 +8,12 @@ const router = createBrowserRouter([
     path: "",
     element: <WelcomePage />,
     errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/search/:productName",
+        element: <Search />,
+      },
+    ],
   },
   {
     path: "/novels",
@@ -29,11 +35,6 @@ const router = createBrowserRouter([
     element: <Horror />,
     errorElement: <ErrorPage />,
   },
-  // {
-  //   path: "/search",
-  //   element: <Search />,
-  //   errorElement: <ErrorPage />,
-  // },
 ]);
 
 const App = () => {

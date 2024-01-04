@@ -8,12 +8,6 @@ const router = createBrowserRouter([
     path: "",
     element: <WelcomePage />,
     errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "/search/:productName",
-        element: <Search />,
-      },
-    ],
   },
   {
     path: "/novels",
@@ -33,6 +27,11 @@ const router = createBrowserRouter([
   {
     path: "/horror",
     element: <Horror />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/search",
+    element: <Search/>,
     errorElement: <ErrorPage />,
   },
 ]);

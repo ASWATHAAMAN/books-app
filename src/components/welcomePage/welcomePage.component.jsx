@@ -1,25 +1,17 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
-import { Search } from "../Book";
-import { Data } from "../../constants";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
 
 const WelcomePage = () => {
-  const navigate = useNavigate()
-  const [item,setItem] = useState("")
-  const [product,setProduct] =  useState(Data)
-  const searchBtnHandler = ()=>{
-navigate(`/search`)
-    const searchBooks = product.map((pro)=>{
-      if(pro.class === item){
-        return {...pro}
-      }
-      return pro
-    })
-    setProduct(searchBooks)
-  }
-
+  const navigate = useNavigate();
+  const [item, setItem] = useState("");
+  const searchBtnHandler = () => {
+    if(item === ""){
+      alert(`Enter a proper search text`)
+    }else{
+      navigate(`/search`,{state:item});
+    }
+  };
 
   return (
     <>
@@ -37,7 +29,7 @@ navigate(`/search`)
               onChange={(e) => setItem(e.target.value)}
             />
             <BsSearch
-              className="text-[2.9rem] text-blue-500 bg-black p-[0.80rem] cursor-pointer"
+              className="text-[2.9rem] text-red-600 bg-black p-[0.80rem] cursor-pointer"
               onClick={searchBtnHandler}
             />
           </div>
